@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap");
+
+.App {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Maven Pro", sans-serif;
+}
+
+.mint {
+  background-color: #2a2a72;
+  background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+
+  border: 1px solid #130202;
+  border-radius: 45px;
+  width: 40%;
+}
+
+.mint button {
+  font-family: "Maven Pro", sans-serif;
+  border-radius: 5px;
+}
+
+Body {
+  background-image: url(/src/punnk.jpeg);
+}
