@@ -1424,20 +1424,20 @@ contract NFT is ERC721Enumerable, Ownable {
     }
 
     // public
- 
-    function isValid(bytes32[] memory proof) public view returns(bool){
-       return MerkleProof.verify(proof,root, keccak256(abi.encodePacked(msg.sender)));
-    }
 
-    function mint(address _to, uint256 _mintAmount,bytes32[] memory proof) public payable {
+
+ 
+ 
+
+
+    function mint(address _to, uint256 _mintAmount,bytes32[] memory proof,bytes32  leaf) public payable {
         uint256 supply = totalSupply();
-        require(isValid(proof),"Not an exclusive member");
+        require(MerkleProof.verify(proof,root,leaf),"Not an exclusive member");
         require(claimed[msg.sender]==false,"already claimed");
         require(!paused);
         require(_mintAmount > 0);
         require(_mintAmount <= maxMintAmount);
         require(supply + _mintAmount <= maxSupply);
-
         if (msg.sender != owner()) {
             require(
                 msg.value == cost * _mintAmount,

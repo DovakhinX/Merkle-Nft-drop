@@ -15,7 +15,7 @@ async function main() {
 
   // We get the contract to deploy
   const NFT = await hre.ethers.getContractFactory("NFT");
-  const nft = await NFT.deploy("0xe750c5a7b9bfbd779ff0c64c826c87ee74a052a71a63efbfb83324fd0a62fb39");
+  const nft = await NFT.deploy("0x602e0b049b8dc9a8e0f311673576d0fa112882301121afe57f79c0bc04759ce8");
 
   await nft.deployed();
 
